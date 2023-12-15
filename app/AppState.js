@@ -8,7 +8,7 @@ class ObservableAppState extends EventEmitter {
   account = null
 
   toDos = []
-  weathers = []
+  weather = null
   quotes = []
   images = []
 }

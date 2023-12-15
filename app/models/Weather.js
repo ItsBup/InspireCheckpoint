@@ -5,4 +5,15 @@ export class Weather {
     this.main = data.main
     this.weather = data.weather
   }
+
+  get weatherCard(){
+    return `
+      <div class="card text-dark">
+      <h4 class="text-center">${this.name}</h4>
+      <p>Main Temperature: ${this.main.temp}</p>
+      </div>
+    `
+  }
 }
+
+
