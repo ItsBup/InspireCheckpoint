@@ -11,8 +11,7 @@ function drawUser() {
   const userAvatar = avatarTemplate(account)
   const button = authButton(user)
   const template = /* html */ `
-    ${userAvatar}
-    ${button}
+    ${userAvatar}${button}
   `
   // @ts-ignore
   document.getElementById('authstate').innerHTML = template
