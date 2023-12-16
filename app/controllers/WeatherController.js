@@ -14,7 +14,7 @@ export class WeatherController {
   constructor() {
     console.log('Weather Loaded')
     AppState.on('user', this.getWeatherApi)
-    AppState.on('weather', _drawWeather)
+    AppState.on('weather',_drawWeather)
   }
 
   async getWeatherApi(){
