@@ -3,6 +3,7 @@ import { HomeController } from "./controllers/HomeController.js";
 import { ImageController } from "./controllers/ImageController.js";
 import { QuoteController } from "./controllers/QuoteController.js";
 import { TimeController } from "./controllers/TimeController.js";
+import { ToDoController } from "./controllers/ToDoController.js";
 import { WeatherController } from "./controllers/WeatherController.js";
 import { AuthGuard } from "./services/AuthService.js";
 import { Router } from "./utils/Router.js";
@@ -11,7 +12,7 @@ import { Router } from "./utils/Router.js";
 export const router = new Router([
   {
     path: '',
-    controllers: [HomeController, WeatherController, TimeController, ImageController, QuoteController],
+    controllers: [HomeController, WeatherController, TimeController, ImageController, QuoteController, ToDoController],
     view: /*html*/`
     <div class="bg-white p-3">
       <div class="card-body">

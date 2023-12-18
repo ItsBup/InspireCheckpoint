@@ -34,8 +34,20 @@ export class Image {
       </main>
   
       <footer class="text-light">
-        <div class="container rounded bg-dark text-center no-select quote-card" id="current-quote">
+        <div class="container mb-5 rounded bg-dark text-center no-select quote-card" id="current-quote">
           ${AppState.quotes.length > 0? AppState.quotes[0].quoteCard : ''}
+        </div>
+        <div class="container mt-5 rounded bg-dark text-center no-select">
+          <div id="to-do-list">
+            ${AppState.toDos.toDoList}
+          </div>
+          <form onsubmit="app.ToDoController.createToDo()">
+            <h3>Create New To Do</h3>
+            <div class="input-group">
+              <input type="text" name="description" id="todo-description" class="form-control" minlength="3" maxlength="15" required placeholder="Task...">
+              <button type="submit" class="btn btn-success" title="Do It!"><i class="mdi mdi-plus"></i></button>
+            </div>
+          </form>
         </div>
       </footer>
     </div>
