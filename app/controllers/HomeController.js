@@ -6,6 +6,6 @@ export class HomeController {
   }
 
   testButton(){
-    Pop.success('The button Works 😎')
+    Pop.success('You should log in')
   }
 }

@@ -9,7 +9,7 @@ function _drawImage(){
   if (randomImage) {
     const content = randomImage.imageCard
     setHTML('current-background', content)
-    console.log('Drawn BackgroundImage:', randomImage)
+    // console.log('Drawn BackgroundImage:', randomImage)
   }
 }
 
@@ -23,7 +23,7 @@ export class ImageController {
   async getImageApi(){
     try {
       await imageService.getImageApi()
-      console.log('Image data updated:', AppState.images);
+      // console.log('Image data updated:', AppState.images)
     } catch (error) {
       console.error(error);
       Pop.error(error)

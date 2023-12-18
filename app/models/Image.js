@@ -34,8 +34,8 @@ export class Image {
       </main>
   
       <footer class="text-light">
-        <div class="container rounded bg-dark text-center no-select">
-          <p class="mb-0"><small>screw it quote goes here</small></p>
+        <div class="container rounded bg-dark text-center no-select quote-card" id="current-quote">
+          ${AppState.quotes.length > 0? AppState.quotes[0].quoteCard : ''}
         </div>
       </footer>
     </div>

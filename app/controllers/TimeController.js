@@ -7,7 +7,7 @@ function _drawTime() {
   if (currentTimeArray && currentTimeArray.length > 0) {
     const content = currentTimeArray[0].formattedUpdatedTime();
     setHTML('current-time', content);
-    console.log('Drawn Time:', content);
+    // console.log('Drawn Time:', content);
   } else {
     console.error('Current time is null or undefined.');
   }

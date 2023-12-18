@@ -5,7 +5,7 @@ import { api } from "./AxiosService.js"
 class ImageService {
     async getImageApi(){
         const response = await api.get('api/images')
-        console.log('getAPI RESPONSE', response)
+        // console.log('getAPI RESPONSE', response)
         const imageData = response.data
         const image = new Image(imageData)
         AppState.images = [image]
