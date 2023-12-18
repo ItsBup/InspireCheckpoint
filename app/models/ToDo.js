@@ -7,8 +7,9 @@ export class ToDo {
   }
   
   get toDoList(){
+    // FIXME make your text legible! Maybe move your text out of a label
     return `
-      <div class="text-dark d-flex justify-content-between">
+      <div class="text-light d-flex justify-content-between">
         <div class="form-check">
           <input class="form-check-input" type="checkbox" ${this.completed ? 'checked' : ''} id="check-box" >
           <label class="form-check-label ${this.completed ? 'completed' : ''}" for="flexCheck">
