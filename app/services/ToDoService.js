@@ -45,6 +45,7 @@ class ToDoService {
         let foundToDo = AppState.toDos.find(toDo => toDo.id == toDoId)
         foundToDo.completed = !foundToDo.completed
         const response = await api.put(`api/todos/${toDoId}`, foundToDo)
+        console.log('please work', response.data)
         AppState.emit('toDos')
     }
     

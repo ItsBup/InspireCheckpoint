@@ -69,5 +69,4 @@ export class ToDoController{
       Pop.error(error)
     }
   }
-  // TODO write your method to update your todo, reference togglePrepared method from spellbook in the sandboxSpellsController
 }
