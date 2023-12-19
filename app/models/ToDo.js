@@ -7,7 +7,6 @@ export class ToDo {
   }
   
   get toDoList(){
-    // DONE make your text legible! Maybe move your text out of a label
     return `
     <div class="text-light d-flex justify-content-between">
       <div class="form-check">

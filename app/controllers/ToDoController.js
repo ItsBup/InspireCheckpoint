@@ -18,8 +18,6 @@ function _drawToDo() {
   setHTML('total-to-do', totalContent)
 }
 
-// TODO filter your array of tasks to contain only uncompleted todos, and the then grab the length of that filtered array
-// TODO draw that number to the page somewhere, along with the unfiltered length of the entire todo array
 export class ToDoController{
   constructor() {
     console.log('ToDoController has loaded')
@@ -37,7 +35,6 @@ export class ToDoController{
     }
   }
   async createToDo(){
-    // DONE put this in a try catch!
     try {
       event.preventDefault()
       const form = event.target
@@ -52,7 +49,6 @@ export class ToDoController{
   }
   
   async deleteToDo(toDoId){
-    // DONE put this in a try catch!
     try {
       let isConfirmed = await Pop.confirm("WARNING?!?", 'ONCE YOU TAKE THIS PATH THERE IS NO RETURN', 'Yeah trash it', 'error')
     if(isConfirmed){
@@ -65,5 +61,13 @@ export class ToDoController{
     }
   }
 
+  async toggleCompleted(toDoId){
+    try {
+      await toDoService.toggleCompleted(toDoId)
+    } catch (error) {
+      console.error(error)
+      Pop.error(error)
+    }
+  }
   // TODO write your method to update your todo, reference togglePrepared method from spellbook in the sandboxSpellsController
 }
