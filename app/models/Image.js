@@ -42,7 +42,8 @@ export class Image {
             ${AppState.toDos.toDoList}
           </div>
           <form onsubmit="app.ToDoController.createToDo()">
-            <h3>Create New To Do</h3>
+            <h3 id="total-to-do"></h3>
+            <h4>Create New To Do</h4>
             <div class="input-group">
               <input type="text" name="description" id="todo-description" class="form-control" minlength="3" maxlength="15" required placeholder="Task...">
               <button type="submit" class="btn btn-success" title="Do It!"><i class="mdi mdi-plus"></i></button>

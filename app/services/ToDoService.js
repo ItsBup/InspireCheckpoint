@@ -19,7 +19,7 @@ class ToDoService {
             headers: {
                 'Content-Type': 'application/json',
             },
-            body: JSON.stringify(formData),
+            body: JSON.stringify({ ...formData, completed: false }),
         })
         if (!response.ok) {
             throw new Error(`Failed to create ToDo: ${response.status} ${response.statusText}`)
@@ -32,7 +32,7 @@ class ToDoService {
     }
     async deleteToDo(toDoId){
         // FIXME before you splice, make your delete request to the sandbox api. Make sure you include your todo id in the request url
-        const response = await fetch('api/todos/${toDoId}',{
+        const response = await fetch(`api/todos/${toDoId}`,{
             method: 'DELETE'
         })
         if (!response.ok) {
