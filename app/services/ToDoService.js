@@ -12,24 +12,36 @@ class ToDoService {
         const todos = todosData.map(todoData => new ToDo(todoData))
         AppState.toDos = todos
     }
-    // FIXME make this async!
     async createToDo(formData){
         // FIXME make a post request to the sandbox api here before you try to create a ToDo class, make sure to include your formdata in the request body
+        const response = await fetch('api/todos', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(formData),
+        })
+        if (!response.ok) {
+            throw new Error(`Failed to create ToDo: ${response.status} ${response.statusText}`)
+        }
+        const responseData = await response.json();
         // FIXME create a Todo with your response data, and push it into the AppState
-        const newToDo = new ToDo(formData)
+        const newToDo = new ToDo(responseData)
         console.log('New ToDo:', newToDo)
         AppState.toDos.push(newToDo)
     }
-    // FIXME make this async!
     async deleteToDo(toDoId){
         // FIXME before you splice, make your delete request to the sandbox api. Make sure you include your todo id in the request url
-
-
+        const response = await fetch('api/todos/${toDoId}',{
+            method: 'DELETE'
+        })
+        if (!response.ok) {
+            throw new Error(`Failed to delete ToDo: ${response.status} ${response.statusText}`)
+        }
         const indexToRemove = AppState.toDos.findIndex(toDo => toDo.id == toDoId)
         if(indexToRemove > -1){
             AppState.toDos.splice(indexToRemove,1)
             saveState('toDos', AppState.toDos)
-            this.saveToDo()
         }
     }
 }
